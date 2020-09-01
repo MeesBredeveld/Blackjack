@@ -1,0 +1,72 @@
+package blckjck;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class DeckofCardsTest {
+	
+	static Scanner scanner = new Scanner(System.in);
+	static ArrayList<String> deck = new ArrayList<>();
+	static String kleur[] = {"Schoppen", "Ruiten", "Harten", "Klaver"};
+	static String waardes[] = {"Twee", "3", "4", "5", "6", "7", "8", "9", "10", "Boer", "Vrouw","Heer", "Aas"};  
+	static ArrayList<String> deckPlayer = new ArrayList<>();
+	static ArrayList<String> deckDealer = new ArrayList<>();
+	static ArrayList<String> temp = new ArrayList<>();
+
+	
+	public static void main(String[] args) {
+		
+		deckShuffle();
+		inputScanner();
+		
+		
+	}
+		
+	
+	public static void deckShuffle()
+	{
+		
+		for(int i = 0; i < kleur.length; i++) {
+			   for(int q = 0; q < waardes.length; q++) {
+			    deck.add(kleur[i] + " " + waardes[q]);
+			   }
+			   }
+		
+	    System.out.println("Dit zijn de geschudde kaarten:");
+	    
+	    
+			    Collections.shuffle(deck);
+				   for(int j = 0; j < deck.size(); j++) {
+					   System.out.println(deck.get(j));
+					   
+				   }
+				   
+				   temp.addAll(deck);
+				 
+	    
+	    System.out.println("Typ k voor een kaart, typ p om te passen, of typ q om te stoppen");
+		
+	}
+	
+	public static void inputScanner() {
+		
+		String input = scanner.nextLine();
+		 
+		 if (input.matches("k")) {
+			 
+			System.out.println("Je kaart is " + deck.get(0));
+			
+			// temp.add(deck.get(0));
+			deckPlayer.add("Jouw kaarten: " + temp.get(0));
+			System.out.println(deckPlayer);
+			temp.remove(0);
+	 
+		   }
+		
+		
+	}}
+	
+	
+	
+	
