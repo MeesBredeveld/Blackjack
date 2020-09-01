@@ -20,10 +20,8 @@ public class DeckofCardsTest {
 		deckShuffle();
 		inputScanner();
 		
-		
 	}
 		
-	
 	public static void deckShuffle()
 	{
 		
@@ -63,7 +61,6 @@ public class DeckofCardsTest {
 			temp.remove(0);
 	 
 		   }
-		
 		
 	}}
 	
